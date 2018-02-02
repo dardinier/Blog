@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des catégories</h1>
+        <div class="categories">
+            {% if categories is not empty %}
+                {% for category in categories %}
+                    <a class="btn btn-outline-{{ category.color }} category" href="{{ path('articlesByCategory', {'id': category.id}) }}">
+                        <div class="category__title">{{ category.name }}</div>
+                    </a>
+                {% endfor %}
+            {% else %}
+                <h5>Il n'y a pas encore de catégories ...</h5>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
