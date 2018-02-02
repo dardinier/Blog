@@ -3,8 +3,13 @@ html, body {
 }
 
 body {
+    background-color: #eaeaec;
     display: flex;
     flex-direction: column;
+}
+
+.navbar {
+    background-color: #161616;
 }
 
 .main-content {
@@ -13,6 +18,7 @@ body {
 }
 
 .footer {
+    background-color: #161616;
     min-height: 100px;
     width: 100%;
     display: flex;
@@ -31,6 +37,7 @@ body {
 }
 
 .category {
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;

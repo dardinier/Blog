@@ -15,7 +15,7 @@ class ArticlesController extends Controller
     {
         $repository = $this->getDoctrine()->getManager()->getRepository("AppBundle:Article");
         $articles = $repository->findAll();
-        return $this->render('articles/articles.html.twig', array('articles' => $articles));
+        return $this->render('pages/articles.html.twig', array('articles' => $articles));
     }
 
     /**
@@ -23,8 +23,12 @@ class ArticlesController extends Controller
      */
     public function getArticlesByCategoryAction(Request $request, $id)
     {
-        $repository = $this->getDoctrine()->getManager()->getRepository("AppBundle:Article");
-        $articles = $repository->findByCategory($id);
-        return $this->render('articles/articles.html.twig', array('articles' => $articles));
+        $articlesRepository = $this->getDoctrine()->getManager()->getRepository("AppBundle:Article");
+        $articles = $articlesRepository ->findByCategory($id);
+
+        $categoryRepository = $this->getDoctrine()->getManager()->getRepository("AppBundle:Category");
+        $category = $categoryRepository->find($id);
+
+        return $this->render('pages/articlesByCategory.html.twig', array('articles' => $articles, 'category' => $category));
     }
 }

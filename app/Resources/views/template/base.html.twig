@@ -10,13 +10,13 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     </head>
     <body>
-    {% block header %}{% include 'header.html.twig' %}{% endblock %}
+    {% block header %}{% include 'template/header.html.twig' %}{% endblock %}
 
     <div class="main-content">
         {% block body %}{% endblock %}
     </div>
 
-    {% block fotter %}{% include 'footer.html.twig' %}{% endblock %}
+    {% block fotter %}{% include 'template/footer.html.twig' %}{% endblock %}
 
 
     {% block javascripts %}

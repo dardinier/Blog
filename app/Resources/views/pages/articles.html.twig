@@ -1,0 +1,26 @@
+{% extends 'template/base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des articles</h1>
+        <div class="articles">
+            {% if articles is not empty %}
+                {% for article in articles if article.active %}
+                    <div class="card article">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ article.date |date("j F Y") }}</h6>
+                            <p class="card-text">{{ article.description }}</p>
+
+                            {% for category in article.categories if article.categories is not empty %}
+                                <a href="{{ path('articlesByCategory', {'id': category.id}) }}" class="badge text-white bg-{{ category.color }}">{{ category.name }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h5>Il n'y a pas encore d'articles ...</h5>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

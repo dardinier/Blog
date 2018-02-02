@@ -15,6 +15,6 @@ class CategoriesController extends Controller
     {
         $repository = $this->getDoctrine()->getManager()->getRepository("AppBundle:Category");
         $categories = $repository->findAll();
-        return $this->render('categories/categories.html.twig', array('categories' => $categories));
+        return $this->render('pages/categories.html.twig', array('categories' => $categories));
     }
 }
