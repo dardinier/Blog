@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ArticlesController extends Controller
 {
     /**
+     * @Security("has_role('ROLE_ADMIN')")
      * @Route("/articles", name="articles")
      */
     public function getAllArticlesAction(Request $request)

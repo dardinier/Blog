@@ -33,5 +33,3 @@ security:
     access_control:
         - { path: ^/, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/articles/, role: ROLE_VISITOR }
-        - { path: ^/categories/, role: ROLE_VISITOR }
