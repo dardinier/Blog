@@ -13,10 +13,15 @@
             </li>
         </ul>
 
-        {% if app.user %}
-            <a href="/logout" class="btn btn-outline-danger">Déconnexion</a>
-        {% else %}
-            <a href="/login" class="btn btn-outline-success">Se connecter</a>
-        {% endif %}
+        <div class="navbar-nav">
+            {% if app.user %}
+                <div class="nav-item nav-link user__name">
+                    Connecté en tant que {{ app.user.username }}
+                </div>
+                <a href="/logout" class="btn btn-outline-danger">Déconnexion</a>
+            {% else %}
+                <a href="/login" class="btn btn-outline-success">Se connecter</a>
+            {% endif %}
+        </div>
     </div>
 </nav>

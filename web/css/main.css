@@ -55,3 +55,8 @@ body {
 .category__title {
     font-size: x-large;
 }
+
+.user__name {
+    margin-right: 0.5em !important;
+    color: rgba(255,255,255,.75) !important;
+}
