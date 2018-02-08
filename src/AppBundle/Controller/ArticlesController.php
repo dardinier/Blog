@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ArticlesController extends Controller
 {
     /**
-     * @Security("has_role('ROLE_ADMIN')")
+     * @Security("has_role('ROLE_USER')")
      * @Route("/articles", name="articles")
      */
     public function getAllArticlesAction(Request $request)

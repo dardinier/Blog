@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class CategoriesController extends Controller
 {
     /**
-     * @Security("has_role('ROLE_VISITOR')")
+     * @Security("has_role('ROLE_USER')")
      * @Route("/categories", name="categories")
      */
     public function indexAction(Request $request)
